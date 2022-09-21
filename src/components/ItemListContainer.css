@@ -1,0 +1,34 @@
+.greeting {
+    color: blue;
+  }
+  .img{
+    width: 100px;
+    height: 100px;
+  }
+  .Item-image{
+    display:flex;
+    justify-content:left;
+    width: 100px;
+    height: 100px;
+    margin-left: 0px;
+  }
+
+  .Item-image ul{
+    display:flex;
+    flex-direction: row;
+    justify-content:right;
+    margin-left: 0px;
+
+  }
+  .Item-image ul li, .main_image {
+    width: 110px;
+    height: 100px;
+    margin-left: 0px;
+    list-style: none;
+  }  
+  .Item-image ul li:hover {
+    transition: all, 1s;
+    transform: scale(1.15); 
+  }
+
+   
