@@ -1,11 +1,30 @@
 import Container from "react-bootstrap/Container";
 import "./ItemListContainer.css";
-import mens_singles from "../mens_singles.PNG";
-import mens_doubles from "../mens_doubles.PNG";
-import female_singles from "../female_singles.PNG";
-import female_doubles from "../female_doubles.PNG";
-import mix_doubles from "../mix_doubles.PNG";
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+//import { getAllProducts, getProducts, getProductsByCategory } from '../../utils/products'
+import { getAllProducts, getProduct, getProductsByCategory } from '../../utils/products'
+import ItemList from './ItemList';
+import RegisterTournaments from "../../components/RegisterTournaments";
+import mens_singles from "../../assets/mens_singles.PNG";
+import mens_doubles from "../../assets/mens_doubles.PNG";
+import female_singles from "../../assets/female_singles.PNG";
+import female_doubles from "../../assets/female_doubles.PNG";
+import mix_doubles from "../../assets/mix_doubles.PNG";
 const ItemListContainer = ({ greeting }) => {
+  const { categoryId } = useParams();
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    if (categoryId) {
+      getProductsByCategory(categoryId)
+        .then((data) => setProducts(data))
+        .catch((error) => console.warn(error))
+    } else {
+      getAllProducts()
+        .then((data) => setProducts(data))
+        .catch((error) => console.warn(error))
+    }
+  }, [categoryId])
   return (
     <Container className="greeting">
       <h3>{greeting}</h3>
@@ -54,47 +73,21 @@ const ItemListContainer = ({ greeting }) => {
           </div>
           <div class="row">&nbsp;</div>
           <div>&nbsp;</div>
-          <section className="Item-image">
-            <ul>
-              <li>
-                {" "}
-                <input type="checkbox"></input>{" "}
-              </li>
-              <li>
-                <img className="main_image" src={mens_singles} />
-              </li>
-              <li>
-                {" "}
-                <input type="checkbox"></input>{" "}
-              </li>
-              <li>
-                <img className="main_image" src={mens_doubles} />
-              </li>
-              <li>
-                {" "}
-                <input type="checkbox"></input>{" "}
-              </li>
-              <li>
-                <img className="main_image" src={female_singles} />
-              </li>
-              <li>
-                {" "}
-                <input type="checkbox"></input>{" "}
-              </li>
-              <li>
-                <img className="main_image" src={female_doubles} />
-              </li>
-              <li>
-                {" "}
-                <input type="checkbox"></input>{" "}
-              </li>
-              <li>
-                <img className="main_image" src={mix_doubles} />
-              </li>
-            </ul>
-          </section>
+          <ItemList products={products} />   
+          
         </div>
       </form>
+      <div className="wrap-components">
+        <main>
+          <section>
+            <div class="header__titulo"> </div>
+            <div class="container margin-left:100px">
+            <RegisterTournaments /> 
+            </div>
+          </section>
+          <section></section>
+        </main>
+      </div>
     </Container>
   );
 };

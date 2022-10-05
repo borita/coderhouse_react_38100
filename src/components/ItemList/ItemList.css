@@ -1,0 +1,6 @@
+.itemList {
+    margin-top: 64px; 
+    margin-right: 12px;
+    display: flex;
+    align-content: space-between;
+  }
