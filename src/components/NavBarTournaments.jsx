@@ -32,8 +32,3 @@ const NavBarTournaments = () => {
 
 export default NavBarTournaments;
 
-// 6 y 7  
-//import ItemListContainer from './components/ItemList/ItemListContainer';
-//import ItemDetailContainer from './components/ItemDetail/ItemDetailContainer';
-// linea 20 <Route path='/category/:categoryId' element={<ItemListContainer greeting={'Bienvenidos a mi tienda'} />} />
-// linea 22 <Route path='/item/:id' element={<ItemDetailContainer />} />

@@ -1,70 +1,22 @@
-# Getting Started with Create React App
+# **Project Name : Tennis Tournaments Management**
+ 
+> ### This project will help the tennis academy administer its tournaments from the registration to managing the enroolments and the draws.
+> ### It will avoid the tedious registration process that would otherwise need to be done manually and provide real time 
+> ### information for  both the players and parents to view.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- ### A page will exist for the registration of the players.
+- ### A page will exist for the list of players that have been registered filtered by category.
+- ### It showcases the draw in its different states of progression for easy consultation online to avoid loss of time.
+- ### It shows the schedule of every game.
+- ### The real time information will need the results from each match that can be consulted by line easily.
 
-## Available Scripts
+## **Configuration:** 
+### There will be a quick, simple set-up linked to the Github aacount with netifly for hosting.
 
-In the project directory, you can run:
+## **How to use:** 
+###    The module is 100% intuitive for easy navigation.
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## **Staus :** 
+>###  Currently, the project is like a prototype;however, in the following months we will use a differents tools like Mysql and React.js in order to complete the project,
+>### the most important feature will include a smart draw generator that when the user registers the score of the matches, the automatic the system will define the next match for every player in his corresponding round.
+>### Additionally, there will be different kinds of draws.
