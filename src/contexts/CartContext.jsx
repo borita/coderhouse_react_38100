@@ -5,8 +5,17 @@ const CartContext = createContext({});
 export default CartContext;
 
 export const CartProvider = ({ children }) => {
-  const [cart, setCart] = useState([]);
 
+  /*
+  let buyer ={
+    name: 'Magadan Academy',
+    phone: '0019564570550',
+    email: 'magadan@gmail.com',
+    order_date:Date.now()
+  }  
+ */
+  const [cart, setCart] = useState([]);
+  const [buyer, setBuyer] = useState([]);
   const addItem = (product, quantity) => {
     if (!isInCart(product.id)) {
       const item = {
@@ -39,8 +48,6 @@ export const CartProvider = ({ children }) => {
   const clear = (e) => {
     setCart([]);
   }
-  // manejar estado de objeto del comprador 
-  //const [buyerMock, setbuyerMock] = useState([]);
 
   const isInCart = (id) => cart.some((item) => item.id === parseInt(id));
 
@@ -48,16 +55,12 @@ export const CartProvider = ({ children }) => {
 
 
   const totalQuantity = cart.reduce((count, item) => count + item.quantity, 0);
+   
+  
 
   return (
-    <CartContext.Provider value={{ cart, addItem, removeItem, clear, isInCart, total, totalQuantity }}>
+    <CartContext.Provider value={{ cart, addItem, removeItem, clear, isInCart, total, totalQuantity ,buyer,setBuyer}}>
       {children}
     </CartContext.Provider>
   )
 };
-const buyer ={
-  name: 'Magadan Academy',
-  phone: '0019564570550',
-  email: 'magadan@gmail.com',
-  order_date:Date.now()
-}

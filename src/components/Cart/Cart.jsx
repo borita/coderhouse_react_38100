@@ -20,21 +20,13 @@ import OrderModal from "../OrderModal/OrderModal";
      order_date:Date.now()
 }
 
-/*
-export const buyerMockCart = () => {
-       const [buyerMock,setbuyerMock] =useState()
-       const levantarEstado = (estadoHijo) => {
-       setbuyerMock(estadoHijo)
-      }
-      return < OrderMdal function= {levantarEstado}/>
-}
-*/
+
 const Cart = () => {
-  const { cart, total, removeItem, clear } = useContext(CartContext)
+  const { cart, total, removeItem, clear,buyer } = useContext(CartContext)
   const [showModal, setShowModal] = useState(false);
   const [orderId, setOrderId] = useState();
+
   // manejar estado de objeto del comprador 
-  
   
   const handleRemove = (itemId) => {
     removeItem(itemId);
@@ -46,9 +38,9 @@ const Cart = () => {
 
   const handleBuy = async () => {
     // aqui buyerMock debe traer setiados los valores del modal
+  
     const newOrder = {
-      //buyer: buyerMock,
-      buyer: buyerMock,
+      buyer: buyer,
       items: cart,
       total
     };

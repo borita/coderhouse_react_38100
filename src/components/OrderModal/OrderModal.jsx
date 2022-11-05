@@ -9,13 +9,15 @@ import ReactDOM from "react-dom";
 import { Formik, Field, Form } from "formik";
 import { FaBlenderPhone } from "react-icons/fa";
 //-------------------------------------------------/
-const OrderModal = ({ showModal, onClose, onBuy, orderId,buyerMock}) => {
-  // obtener los datos de la forma y pasarselo al objeto buyerMock
-  const [buyer,setbuyer] = useState({
-    name:'',
-    email:'',
-    phone:''
-  });
+import {useContext} from "react"
+//import {CartContext} from '../../contexts/CartContext'
+import CartContext from "../../contexts/CartContext";
+const OrderModal = ({ showModal, onClose, onBuy, orderId}) => {
+ //----
+
+ let {buyer,setBuyer} = useContext(CartContext)
+
+//----
   return (
     <Modal show={showModal} onHide={onClose}>
       <Modal.Header closeButton>
@@ -27,17 +29,16 @@ const OrderModal = ({ showModal, onClose, onBuy, orderId,buyerMock}) => {
               name: "",
               phone: "",
               email: "",
+              order_date:Date.now()
             }}
             onSubmit={async (values) => {
               await new Promise((r) => setTimeout(r, 500));
-               setbuyer= ({
-                name: values.name,
-                phone:values.phone,
-                email: values.email,
-                order_date:Date.now(),
-              }) 
-              buyerMock =[...buyer]
-              alert("objeto copiado "+buyerMock)
+             /*
+             let buyer = {
+                ...values
+              };
+              */
+              setBuyer(values)
             }}
           >
             <Form>
@@ -85,10 +86,10 @@ const OrderModal = ({ showModal, onClose, onBuy, orderId,buyerMock}) => {
         {orderId && (
           <div className="footerOrderSuccess">
             <Alert key="success" variant="success">
-              Numero de orden: {orderId}
+              Order Number: {orderId}
             </Alert>
             <Link to="/CategoryId">
-              <Button variant="success">Comprar nuevamente</Button>
+              <Button variant="success">Buy Again</Button>
             </Link>
           </div>
         )}
@@ -99,14 +100,3 @@ const OrderModal = ({ showModal, onClose, onBuy, orderId,buyerMock}) => {
 
 
 export default OrderModal;
-/*
- onSubmit={async (values) => {
-              await new Promise((r) => setTimeout(r, 500));
-               buyerMock = {
-                name: values.name,
-                phone:values.phone,
-                email: values.email,
-                order_date:Date.now(),
-              }
-            }}
-*/
